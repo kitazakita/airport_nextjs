@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useLayoutEffect, useState } from "react";
 import { useEffect } from "react";
 import { Link as Scroll } from "react-scroll";
 import Head from "next/head";
@@ -11,10 +11,13 @@ import ElderlyWomanIcon from "@mui/icons-material/ElderlyWoman";
 import QuizIcon from "@mui/icons-material/Quiz";
 import MenuIcon from "@mui/icons-material/Menu";
 import VerticalAlignTopIcon from "@mui/icons-material/VerticalAlignTop";
+import { gsap } from "gsap/dist/gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Header = (props) => {
   const [menuToggle, setMenuToggle] = useState(false);
-
   const clickHandler = () => {
     setMenuToggle((prev) => {
       return !prev;
@@ -22,7 +25,6 @@ const Header = (props) => {
   };
 
   const [isVisible, setIsVisible] = useState(false);
-
   const toggleVisibility = () => {
     window.scrollY > 500 ? setIsVisible(true) : setIsVisible(false);
   };
@@ -44,6 +46,14 @@ const Header = (props) => {
   useEffect(() => {
     window.addEventListener("scroll", toggleVisibility);
   }, []);
+
+  useLayoutEffect(() => {
+    // -- GSAP ANIMATION CODE HERE --
+
+    return () => {
+      // cleanup code (optional)
+    };
+  }, []); // <- empty dependency Array so it doesn't re-run on every render!
 
   return (
     <>
