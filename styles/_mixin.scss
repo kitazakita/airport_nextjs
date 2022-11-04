@@ -1,0 +1,70 @@
+$black: black;
+$dark: #333333;
+$grey: rgb(226, 226, 226);
+$white: white;
+$blue: royalblue;
+$red: red;
+$yellow: yellow;
+
+/*---------------------
+  border 枠線
+  
+  => Congestionコンポーネント使用
+  => Newsコンポーネント、テーブルにて使用
+---------------------*/
+@mixin border($px: 1px) {
+  border: $px solid #8a8a8a;
+}
+
+/*---------------------
+  button blue色風
+  
+  => Newsコンポーネント
+  => Congestionコンポーネント
+---------------------*/
+@mixin blue-btn($w: 300px, $h: 40px) {
+  color: $white;
+  background: $blue;
+  border-radius: 0.8rem;
+  width: $w;
+  height: $h;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem auto 0 auto;
+  font-size: 0.8rem;
+}
+
+/*---------------------
+  レスポンシブ
+---------------------*/
+$sm: 576px;
+$md: 768px;
+$lg: 900px;
+$xl: 1200px;
+$xxl: 1400px;
+@mixin sm {
+  @media screen and (max-width: $sm) {
+    @content;
+  }
+}
+@mixin md {
+  @media screen and (max-width: $md) {
+    @content;
+  }
+}
+@mixin lg {
+  @media screen and (max-width: $lg) {
+    @content;
+  }
+}
+@mixin xl {
+  @media screen and (max-width: $xl) {
+    @content;
+  }
+}
+@mixin xxl {
+  @media screen and (max-width: $xxl) {
+    @content;
+  }
+}

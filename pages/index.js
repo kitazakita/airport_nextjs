@@ -1,11 +1,13 @@
-import Head from "next/head";
-import Image from "next/image";
-import styles from "../styles/Home.module.css";
+import Header from "../components/Header";
+import MainVisual from "../components/TopPage/MainVisual";
+import MainMenu from "../components/TopPage/MainMenu";
 
 export default function Home() {
   return (
     <>
-      <h1>トップページ</h1>
+      <Header title="トップページ" />
+      <MainVisual />
+      <MainMenu />
     </>
   );
 }
