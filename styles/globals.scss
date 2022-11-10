@@ -5,6 +5,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  height: 1000vh;
+}
 img {
   max-width: 100%;
   vertical-align: bottom;
@@ -34,7 +37,11 @@ header {
   .header-logo {
     display: flex;
     align-items: center;
-    color: $black;
+    height: 100%;
+
+    img {
+      height: 100%;
+    }
   }
 
   .sub-menu {
@@ -50,7 +57,7 @@ header {
       gap: 1.5rem;
 
       a {
-        color: $black;
+        color: $white;
         text-decoration: none;
         display: flex;
         flex-direction: column;
@@ -62,9 +69,53 @@ header {
 
   .main-menu {
     margin: 0 auto;
+    margin-top: 1rem;
     max-width: 1000px;
     img {
       max-height: 50px;
+    }
+  }
+
+  .hamburger-menu-btn {
+    width: 30px;
+    height: 15px;
+    position: relative;
+    z-index: 10;
+    span {
+      position: absolute;
+      width: 1.7rem;
+      height: 2px;
+      background-color: $white;
+      border-radius: 0.05rem;
+      left: 0;
+      transition: transform 0.3s;
+      &:nth-child(1) {
+        top: 0;
+      }
+      &:nth-child(2) {
+        top: 50%;
+      }
+      &:nth-child(3) {
+        top: 100%;
+      }
+    }
+    &.active {
+      //ハンバーガーメニュークリック時に付与するクラス
+      span {
+        transition: transform 0.5s;
+        &:nth-child(1) {
+          top: 0;
+          transform: translateY(7px) rotate(45deg);
+        }
+        &:nth-child(2) {
+          top: 50%;
+          opacity: 0;
+        }
+        &:nth-child(3) {
+          top: 100%;
+          transform: translateY(-7px) rotate(-45deg);
+        }
+      }
     }
   }
 
@@ -76,24 +127,37 @@ header {
       right: 0;
       bottom: 0;
       z-index: 10;
-      padding: 1rem;
-      transform: translateX(100vw);
-      transition: transform 1s;
+      padding: 1rem 2rem;
+      transform: translateX(80vw);
+      transition: transform 0.7s;
       overflow-y: auto;
-      backdrop-filter: blur(10px);
+      background-color: white;
+      box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.4);
 
+      a {
+        width: 100%;
+        margin: 0.5rem 0;
+        text-align: center;
+      }
+      p {
+        text-align: center;
+      }
       &.toggleMenu {
         transform: translateX(0);
       }
       img {
         max-height: 50px;
       }
+
+      .mobile-menu-icon {
+        text-align: center;
+      }
     }
   }
 }
 
 section.main-visual {
-  margin-top: 90px;
+  margin-top: 120px;
   @include lg {
     margin-top: 0;
   }
@@ -163,10 +227,10 @@ section.main-visual {
 
         h2 {
           margin-top: 3rem;
-          font-size: clamp(1.3rem, 1.023rem + 2.39vw, 2.513rem);
+          font-size: clamp(1.25rem, 1.023rem + 1.14vw, 1.875rem);
         }
         h1 {
-          font-size: clamp(2rem, 1.364rem + 3.18vw, 3.75rem);
+          font-size: clamp(1.25rem, 0.614rem + 3.18vw, 3rem);
         }
       }
     }
@@ -179,7 +243,7 @@ section.main-visual {
 
     //   プログレスバー下に移動
     .swiper-pagination-progressbar {
-      background: yellow;
+      background: $white;
       top: auto;
       left: 20px;
       bottom: 20px;
@@ -189,7 +253,7 @@ section.main-visual {
       }
 
       .swiper-pagination-progressbar-fill {
-        background-color: red;
+        background-color: $blue;
       }
     }
   }
@@ -207,20 +271,24 @@ section.main-menu {
       width: calc(100% / 3);
       position: relative;
       overflow: hidden;
-      @include md {
-        width: 100%;
-      }
 
       // liをホバーしたら、展開式テーブルのアニメーションを実行
       &:hover {
         & > .menu p {
           transform: translateX(-50%) translateY(-50px);
         }
-
         & > .table {
           animation: upView 0.5s ease forwards;
           @include md {
             animation: none;
+          }
+        }
+      }
+      @include md {
+        width: 100%;
+        &:hover {
+          & > .menu p {
+            transform: translateX(-50%);
           }
         }
       }
@@ -241,7 +309,7 @@ section.main-menu {
             bottom: 0;
             left: 0;
             background: $blue;
-            opacity: 0.1;
+            opacity: 0.3;
             @include md {
               opacity: 0;
             }
@@ -270,6 +338,7 @@ section.main-menu {
           left: 50%;
           transform: translateX(-50%);
           transition: all 0.4s;
+          text-shadow: 2px 3px 3px rgba(0, 0, 0, 0.4);
         }
       }
 
@@ -323,6 +392,185 @@ section.main-menu {
           align-items: center;
         }
       }
+    }
+  }
+}
+
+section#congestion {
+  background-color: $grey;
+  padding: 5rem 0;
+  h1 {
+    text-align: center;
+    margin-bottom: 5rem;
+    font-size: 2rem;
+  }
+
+  .congestion-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    @include md {
+      flex-direction: column;
+      gap: 8rem;
+    }
+
+    .left-column {
+      width: 40%;
+      @include lg {
+        width: 50%;
+      }
+      @include md {
+        width: 100%;
+      }
+      h2 {
+        text-align: center;
+        color: $blue;
+      }
+
+      ul.inner-container {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: 2rem;
+        padding: 0 5%;
+        @include sm {
+          flex-direction: column;
+        }
+
+        li.card {
+          width: 40%;
+          text-align: center;
+          @include sm {
+            width: 80%;
+            margin: 0 auto;
+          }
+          h3 {
+            margin: 0.5rem 0;
+            font-weight: normal;
+            font-size: 1rem;
+          }
+          .card-content {
+            display: flex;
+            align-content: center;
+            justify-content: center;
+            max-width: 300px;
+          }
+          .card-icon {
+            width: 50%;
+            display: flex;
+            align-items: center;
+
+            svg {
+              width: 100%;
+              // height: 100%;
+              height: 35px;
+
+              & > * {
+                width: 100%;
+                color: $dark;
+              }
+            }
+          }
+          p.card-status {
+            width: 50%;
+            padding: 0.7rem 0 0.7rem 0;
+            background-color: $white;
+          }
+        }
+      }
+
+      .btn-container {
+        margin: 2rem 0;
+        text-align: center;
+      }
+    }
+    .right-column {
+      width: 40%;
+      @include lg {
+        width: 50%;
+      }
+      @include md {
+        width: 100%;
+      }
+      h2 {
+        text-align: center;
+        color: $blue;
+      }
+
+      ul.inner-container {
+        list-style: none;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin-top: 2rem;
+        padding: 0 5%;
+
+        li.card {
+          width: calc(100% / 3);
+          padding: 0 1.5rem;
+          h3 {
+            margin: 0.5rem 0;
+            text-align: center;
+            font-weight: normal;
+            font-size: 1rem;
+          }
+          p.card-status {
+            background-color: $white;
+            padding: 0.7rem 0 0.7rem 0;
+            text-align: center;
+
+            &.bg-red {
+              background-color: $red;
+              color: $white;
+            }
+            &.bg-yellow {
+              background-color: $yellow;
+            }
+          }
+        }
+      }
+
+      .btn-container {
+        margin: 2rem 0;
+        text-align: center;
+      }
+    }
+  }
+}
+
+section#news {
+  margin-top: 5rem;
+  h1 {
+    display: inline-block;
+    border-bottom: 3px solid $blue;
+    margin-bottom: 1rem;
+    margin-left: 10%;
+    padding-right: 8rem;
+  }
+
+  .inner-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    ul.left-column {
+      width: 40%;
+      list-style: none;
+      li {
+        .info {
+          span {
+            &.category {
+              display: flex;
+              align-items: center;
+            }
+          }
+        }
+      }
+    }
+    .right-column {
+      width: 40%;
     }
   }
 }

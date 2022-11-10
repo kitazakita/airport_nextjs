@@ -1,4 +1,4 @@
-import { useLayoutEffect, useState } from "react";
+import { useState } from "react";
 import { useEffect } from "react";
 import { Link as Scroll } from "react-scroll";
 import Head from "next/head";
@@ -9,12 +9,7 @@ import AirplanemodeActiveIcon from "@mui/icons-material/AirplanemodeActive";
 import ContactSupportIcon from "@mui/icons-material/ContactSupport";
 import ElderlyWomanIcon from "@mui/icons-material/ElderlyWoman";
 import QuizIcon from "@mui/icons-material/Quiz";
-import MenuIcon from "@mui/icons-material/Menu";
 import VerticalAlignTopIcon from "@mui/icons-material/VerticalAlignTop";
-import { gsap } from "gsap/dist/gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
 
 const Header = (props) => {
   const [menuToggle, setMenuToggle] = useState(false);
@@ -25,10 +20,9 @@ const Header = (props) => {
   };
 
   const [isVisible, setIsVisible] = useState(false);
-  const toggleVisibility = () => {
+  const pageUpToggleVisibility = () => {
     window.scrollY > 500 ? setIsVisible(true) : setIsVisible(false);
   };
-
   const pageTopButtonStyle = {
     position: "fixed",
     bottom: "10px",
@@ -44,22 +38,14 @@ const Header = (props) => {
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", toggleVisibility);
+    window.addEventListener("scroll", pageUpToggleVisibility);
+    window.addEventListener("resize", () => {});
   }, []);
-
-  useLayoutEffect(() => {
-    // -- GSAP ANIMATION CODE HERE --
-
-    return () => {
-      // cleanup code (optional)
-    };
-  }, []); // <- empty dependency Array so it doesn't re-run on every render!
 
   return (
     <>
       <Head>
         <title>{props.title}</title>
-        {/* BootStrap CDN */}
       </Head>
       <Scroll
         to="top"
@@ -81,10 +67,7 @@ const Header = (props) => {
         <AppBar>
           <div className="inner-wrapper">
             <div className="header-logo">
-              <div className="logo-img">
-                <AirplanemodeActiveIcon />
-              </div>
-              <h1>〇〇空港</h1>
+              <img src="./images/logo_white.png" alt="" />
             </div>
 
             <div className="sub-menu">
@@ -113,9 +96,21 @@ const Header = (props) => {
               sx={{ display: { xs: "block", md: "none" } }}
               onClick={clickHandler}
             >
-              <MenuIcon
+              {/* <MenuIcon
                 sx={{ color: "white", width: "40px", height: "40px" }}
-              />
+              /> */}
+
+              <div
+                className={
+                  menuToggle
+                    ? "hamburger-menu-btn active"
+                    : "hamburger-menu-btn"
+                }
+              >
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
             </Button>
           </div>
         </AppBar>
@@ -210,9 +205,9 @@ const Header = (props) => {
               <ListItem disablePadding>
                 <ListItemButton>
                   <a href="#" sx={{ display: "flex" }}>
-                    <Box>
+                    <div className="mobile-menu-icon">
                       <img src="./images/headerMenuJapan.png" alt="" />
-                    </Box>
+                    </div>
                     <Box>
                       <p>国内線フライト情報</p>
                     </Box>
@@ -222,9 +217,9 @@ const Header = (props) => {
               <ListItem disablePadding>
                 <ListItemButton>
                   <a href="#" sx={{ display: "flex" }}>
-                    <Box>
+                    <div className="mobile-menu-icon">
                       <img src="./images/headerMenuWorld.png" alt="" />
-                    </Box>
+                    </div>
                     <Box>
                       <p>国際線フライト情報</p>
                     </Box>
@@ -234,9 +229,9 @@ const Header = (props) => {
               <ListItem disablePadding>
                 <ListItemButton>
                   <a href="#" sx={{ display: "flex" }}>
-                    <Box>
+                    <div className="mobile-menu-icon">
                       <img src="./images/headerMenuFood.png" alt="" />
-                    </Box>
+                    </div>
                     <Box>
                       <p>レストラン</p>
                     </Box>
@@ -246,9 +241,9 @@ const Header = (props) => {
               <ListItem disablePadding>
                 <ListItemButton>
                   <a href="#" sx={{ display: "flex" }}>
-                    <Box>
+                    <div className="mobile-menu-icon">
                       <img src="./images/headerMenuShop.png" alt="" />
-                    </Box>
+                    </div>
                     <Box>
                       <p>ショップ</p>
                     </Box>
@@ -258,9 +253,9 @@ const Header = (props) => {
               <ListItem disablePadding>
                 <ListItemButton>
                   <a href="#" sx={{ display: "flex" }}>
-                    <Box>
+                    <div className="mobile-menu-icon">
                       <img src="./images/headerMenuShop2.png" alt="" />
-                    </Box>
+                    </div>
                     <Box>
                       <p>免税店</p>
                     </Box>
