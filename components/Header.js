@@ -5,12 +5,11 @@ import Head from "next/head";
 import { AppBar, Button, List, ListItem, ListItemButton } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
 import { Box } from "@mui/system";
-import AirplanemodeActiveIcon from "@mui/icons-material/AirplanemodeActive";
 import ContactSupportIcon from "@mui/icons-material/ContactSupport";
 import ElderlyWomanIcon from "@mui/icons-material/ElderlyWoman";
 import QuizIcon from "@mui/icons-material/Quiz";
-import VerticalAlignTopIcon from "@mui/icons-material/VerticalAlignTop";
 import FlightIcon from "@mui/icons-material/Flight";
+import Link from "next/link";
 
 const Header = (props) => {
   const [menuToggle, setMenuToggle] = useState(false);
@@ -66,33 +65,36 @@ const Header = (props) => {
           TOP
         </Button>
       </Scroll>
+
       <header id="top">
         <div className="spacer"></div>
-        <AppBar>
+        <AppBar sx={{ height: "70px" }}>
           <div className="inner-wrapper">
-            <div className="header-logo">
-              <img src="./images/logo_white.png" alt="" />
-            </div>
+            <Link href="./">
+              <div className="header-logo">
+                <img src="./images/logo_white.png" alt="" />
+              </div>
+            </Link>
 
             <div className="sub-menu">
               <ul>
                 <li>
-                  <a href="#">
+                  <Link href="./info">
                     <ContactSupportIcon />
                     お問い合わせ
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#">
+                  <Link href="./info">
                     <QuizIcon />
                     よくある質問
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#">
+                  <Link href="./info">
                     <ElderlyWomanIcon />
                     お手伝いが必要な方
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -130,75 +132,83 @@ const Header = (props) => {
             <Grid
               container
               md={6}
-              sx={{ textAlign: "center", display: { xs: "none", md: "flex" } }}
+              sx={{
+                padding: "2% 0",
+                textAlign: "center",
+                display: { xs: "none", md: "flex" },
+              }}
             >
               {/* 左側のメニュー */}
               <Grid md={6}>
-                <Box>
-                  <a href="#">
+                <Link href="./flight">
+                  <Box>
                     <Box>
                       <img src="./images/headerMenuJapan.png" alt="" />
                     </Box>
                     <Box>
                       <p>国内線フライト情報</p>
                     </Box>
-                  </a>
-                </Box>
+                  </Box>
+                </Link>
               </Grid>
               <Grid md={6}>
-                <Box>
-                  <a href="#">
+                <Link href="./flight">
+                  <Box>
                     <Box>
                       <img src="./images/headerMenuWorld.png" alt="" />
                     </Box>
                     <Box>
                       <p>国際線フライト情報</p>
                     </Box>
-                  </a>
-                </Box>
+                  </Box>
+                </Link>
               </Grid>
             </Grid>
             <Grid
               container
               md={6}
-              sx={{ textAlign: "center", display: { xs: "none", md: "flex" } }}
+              sx={{
+                padding: "2% 0",
+                textAlign: "center",
+                display: { xs: "none", md: "flex" },
+              }}
             >
               {/* 右側のメニュー */}
               <Grid md={4}>
-                <Box>
-                  <a href="#">
+                <Link href="./stay">
+                  <Box>
                     <Box>
                       <img src="./images/headerMenuFood.png" alt="" />
                     </Box>
                     <Box>
                       <p>レストラン</p>
                     </Box>
-                  </a>
-                </Box>
+                  </Box>
+                </Link>
               </Grid>
               <Grid md={4}>
-                <Box>
-                  <a href="#">
+                <Link href="./stay">
+                  <Box>
                     <Box>
                       <img src="./images/headerMenuShop.png" alt="" />
                     </Box>
                     <Box>
                       <p>ショップ</p>
                     </Box>
-                  </a>
-                </Box>
+                  </Box>
+                </Link>
               </Grid>
               <Grid md={4}>
-                <Box>
-                  <a href="#">
+                <Link href="./stay">
+                  <Box>
                     <Box>
                       <img src="./images/headerMenuShop2.png" alt="" />
                     </Box>
                     <Box>
                       <p>免税店</p>
                     </Box>
-                  </a>
-                </Box>
+                  </Box>
+                </Link>
               </Grid>
             </Grid>
           </Grid>
@@ -208,78 +218,78 @@ const Header = (props) => {
             <List>
               <ListItem disablePadding>
                 <ListItemButton>
-                  <a href="#" sx={{ display: "flex" }}>
+                  <Link href="./flight" sx={{ display: "flex" }}>
                     <div className="mobile-menu-icon">
                       <img src="./images/headerMenuJapan.png" alt="" />
                     </div>
                     <Box>
                       <p>国内線フライト情報</p>
                     </Box>
-                  </a>
+                  </Link>
                 </ListItemButton>
               </ListItem>
               <ListItem disablePadding>
                 <ListItemButton>
-                  <a href="#" sx={{ display: "flex" }}>
+                  <Link href="./flight" sx={{ display: "flex" }}>
                     <div className="mobile-menu-icon">
                       <img src="./images/headerMenuWorld.png" alt="" />
                     </div>
                     <Box>
                       <p>国際線フライト情報</p>
                     </Box>
-                  </a>
+                  </Link>
                 </ListItemButton>
               </ListItem>
               <ListItem disablePadding>
                 <ListItemButton>
-                  <a href="#" sx={{ display: "flex" }}>
+                  <Link href="./stay" sx={{ display: "flex" }}>
                     <div className="mobile-menu-icon">
                       <img src="./images/headerMenuFood.png" alt="" />
                     </div>
                     <Box>
                       <p>レストラン</p>
                     </Box>
-                  </a>
+                  </Link>
                 </ListItemButton>
               </ListItem>
               <ListItem disablePadding>
                 <ListItemButton>
-                  <a href="#" sx={{ display: "flex" }}>
+                  <Link href="./stay" sx={{ display: "flex" }}>
                     <div className="mobile-menu-icon">
                       <img src="./images/headerMenuShop.png" alt="" />
                     </div>
                     <Box>
                       <p>ショップ</p>
                     </Box>
-                  </a>
+                  </Link>
                 </ListItemButton>
               </ListItem>
               <ListItem disablePadding>
                 <ListItemButton>
-                  <a href="#" sx={{ display: "flex" }}>
+                  <Link href="./stay" sx={{ display: "flex" }}>
                     <div className="mobile-menu-icon">
                       <img src="./images/headerMenuShop2.png" alt="" />
                     </div>
                     <Box>
                       <p>免税店</p>
                     </Box>
-                  </a>
+                  </Link>
                 </ListItemButton>
               </ListItem>
 
               <ListItem disablePadding>
                 <ListItemButton>
-                  <a href="#">お問い合わせ</a>
+                  <Link href="./info">お問い合わせ</Link>
                 </ListItemButton>
               </ListItem>
               <ListItem disablePadding>
                 <ListItemButton>
-                  <a href="#">よくある質問</a>
+                  <Link href="./info">よくある質問</Link>
                 </ListItemButton>
               </ListItem>
               <ListItem disablePadding>
                 <ListItemButton>
-                  <a href="#">お手伝いが必要な方</a>
+                  <Link href="./info">お手伝いが必要な方</Link>
                 </ListItemButton>
               </ListItem>
             </List>

@@ -17,9 +17,8 @@ a {
 }
 
 header {
-  height: 70px;
   .spacer {
-    height: 80px;
+    height: 70px;
   }
 
   .inner-wrapper {
@@ -65,7 +64,6 @@ header {
 
   .main-menu {
     margin: 0 auto;
-    margin-top: 1rem;
     max-width: 1000px;
     img {
       max-height: 50px;
@@ -215,15 +213,14 @@ footer {
   }
 }
 
+/*-----
+---トップページ-----
+----*/
+
 section.main-visual {
-  margin-top: 120px;
-  @include lg {
-    margin-top: 0;
-  }
   .mySwiper {
     .swiper-slide {
       position: relative;
-
       //Swiperスライドの上に設置コンテンツ
       .swiper-content {
         position: absolute;
@@ -690,5 +687,39 @@ section#topics {
     .img {
       padding: 0 2rem;
     }
+  }
+}
+
+/*-----
+---フライトページ-----
+----*/
+
+section#flight-main-visual {
+  height: 300px;
+  background-image: url(../public/images/flight-main-visual.jpg);
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-size: cover;
+
+  .text-content {
+    padding: 5% 0 0 8%;
+    h1 {
+      font-size: clamp(1.25rem, 0.614rem + 3.18vw, 3rem);
+    }
+    h4 {
+      font-size: clamp(1.25rem, 1.023rem + 1.14vw, 1.875rem);
+    }
+  }
+}
+
+section#flight-infomation {
+  margin-top: 5rem;
+  h1 {
+    text-align: center;
+  }
+
+  .flight-search-container {
+    background-color: $dark;
+    color: $white;
   }
 }
