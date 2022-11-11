@@ -1,0 +1,19 @@
+{
+  "flight": [
+    { "goal": "北海道", "time": "7:00", "airline": "ANA" },
+    { "goal": "北海道", "time": "8:00", "airline": "JAL" },
+    { "goal": "北海道", "time": "9:00", "airline": "SKY" },
+
+    { "goal": "東京", "time": "10:00", "airline": "ANA" },
+    { "goal": "東京", "time": "11:00", "airline": "JAL" },
+    { "goal": "東京", "time": "12:00", "airline": "SKY" },
+
+    { "goal": "東京", "time": "16:00", "airline": "ANA" },
+    { "goal": "東京", "time": "17:00", "airline": "JAL" },
+    { "goal": "東京", "time": "18:00", "airline": "SKY" },
+
+    { "goal": "大阪", "time": "20:00", "airline": "ANA" },
+    { "goal": "大阪", "time": "21:00", "airline": "JAL" },
+    { "goal": "大阪", "time": "22:00", "airline": "SKY" }
+  ]
+}
