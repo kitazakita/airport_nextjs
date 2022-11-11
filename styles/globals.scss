@@ -5,16 +5,12 @@
   padding: 0;
   box-sizing: border-box;
 }
-body {
-  height: 1000vh;
-}
 img {
   max-width: 100%;
   vertical-align: bottom;
 }
 a {
   text-decoration: none;
-
   &:visited {
     color: $black;
   }
@@ -152,6 +148,69 @@ header {
       .mobile-menu-icon {
         text-align: center;
       }
+    }
+  }
+}
+
+footer {
+  background-color: $skyBlue;
+  margin-top: 8rem;
+  padding-top: 3rem;
+  .inner-container {
+    display: flex;
+    justify-content: space-around;
+    @include sm {
+      flex-direction: column;
+    }
+    .logo {
+      width: 20%;
+      margin: 0 auto;
+      @include md {
+        width: 30%;
+      }
+      @include sm {
+        width: 50%;
+      }
+    }
+
+    ul.footer-content {
+      width: 60%;
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 auto;
+      @include sm {
+        width: 70%;
+      }
+
+      li {
+        width: calc(100% / 3);
+        @include md {
+          width: 50%;
+        }
+        @include sm {
+          margin: 0 auto;
+          width: 70%;
+        }
+
+        h4 {
+          margin-top: 1rem;
+          display: flex;
+          align-items: center;
+          font-size: 0.9rem;
+        }
+
+        p {
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+
+  .copy-right {
+    text-align: center;
+    padding: 2rem 0;
+    small {
     }
   }
 }
@@ -397,7 +456,7 @@ section.main-menu {
 }
 
 section#congestion {
-  background-color: $grey;
+  background-color: $skyBlue;
   padding: 5rem 0;
   h1 {
     text-align: center;
@@ -541,36 +600,95 @@ section#congestion {
 }
 
 section#news {
-  margin-top: 5rem;
-  h1 {
-    display: inline-block;
-    border-bottom: 3px solid $blue;
-    margin-bottom: 1rem;
-    margin-left: 10%;
-    padding-right: 8rem;
-  }
+  max-width: 1400px;
+  margin: 0 auto;
+  margin-top: 8rem;
+  @include title;
 
   .inner-container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
+    @include md {
+      flex-direction: column;
+      gap: 3rem;
+    }
 
-    ul.left-column {
-      width: 40%;
+    .left-column {
+      width: 50%;
       list-style: none;
-      li {
-        .info {
-          span {
-            &.category {
-              display: flex;
-              align-items: center;
+      font-size: 0.8rem;
+      @include md {
+        width: 80%;
+      }
+
+      table {
+        width: 100%;
+        tbody {
+          tr {
+            display: flex;
+            gap: 1.5rem;
+            padding-left: 1rem;
+            @include sm {
+              flex-direction: column;
+              gap: 0;
+              padding-bottom: 1rem;
+            }
+
+            &.bg-blue {
+              background-color: $skyBlue;
+            }
+            &:nth-child(odd) {
+              padding-top: 1rem;
+            }
+            &:nth-child(even) {
+              padding-bottom: 1rem;
+            }
+            td {
+              &.category {
+                display: flex;
+                align-items: center;
+
+                img {
+                  height: 1rem;
+                }
+              }
             }
           }
         }
       }
+      .btn-container {
+        margin: 2rem 0;
+        text-align: center;
+      }
     }
     .right-column {
       width: 40%;
+      text-align: center;
+      @include md {
+        width: 80%;
+      }
+    }
+  }
+}
+
+section#topics {
+  max-width: 1400px;
+  margin: 0 auto;
+  margin-top: 8rem;
+  @include title;
+
+  .img-container {
+    display: flex;
+    justify-content: center;
+    @include md {
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .img {
+      padding: 0 2rem;
     }
   }
 }

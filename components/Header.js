@@ -10,6 +10,7 @@ import ContactSupportIcon from "@mui/icons-material/ContactSupport";
 import ElderlyWomanIcon from "@mui/icons-material/ElderlyWoman";
 import QuizIcon from "@mui/icons-material/Quiz";
 import VerticalAlignTopIcon from "@mui/icons-material/VerticalAlignTop";
+import FlightIcon from "@mui/icons-material/Flight";
 
 const Header = (props) => {
   const [menuToggle, setMenuToggle] = useState(false);
@@ -33,8 +34,10 @@ const Header = (props) => {
     maxHeight: "50px",
     borderRadius: "50%",
     display: "flex",
+    flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
+    fontSize: ".7rem",
   };
 
   useEffect(() => {
@@ -53,13 +56,14 @@ const Header = (props) => {
         smooth={true}
       >
         <Button variant="contained" sx={pageTopButtonStyle}>
-          <VerticalAlignTopIcon
+          <FlightIcon
             sx={{
               color: "white",
               width: "150%",
               height: "150%",
             }}
           />
+          TOP
         </Button>
       </Scroll>
       <header id="top">

@@ -1,4 +1,5 @@
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay, EffectFade } from "swiper";
 import "swiper/css";
@@ -9,7 +10,6 @@ import DirectionsSubwayIcon from "@mui/icons-material/DirectionsSubway";
 import DirectionsBusIcon from "@mui/icons-material/DirectionsBus";
 import AirportShuttleIcon from "@mui/icons-material/AirportShuttle";
 import Button from "@mui/material/Button";
-import LabelIcon from "@mui/icons-material/Label";
 
 export default function Home() {
   return (
@@ -19,6 +19,8 @@ export default function Home() {
       <MainMenu />
       <Congestion />
       <News />
+      <Topics />
+      <Footer />
     </>
   );
 }
@@ -243,27 +245,111 @@ const News = () => {
       <h1>お知らせ</h1>
 
       <div className="inner-container">
-        <ul className="left-column">
-          <li>
-            <div className="info">
-              <span>
-                <time dateTime="2022-10-28">2022年10月28日</time>
-              </span>
-              <span className="category">
-                <LabelIcon />
-                新着情報
-              </span>
-              <span className="category">
-                <LabelIcon />
-                作業進捗
-              </span>
-            </div>
-            <div className="content">M.2SSD購入しました。</div>
-          </li>
-        </ul>
+        <div className="left-column">
+          <table>
+            <tbody>
+              <tr className="bg-blue">
+                <td>
+                  <time dateTime="2022-11-11">2022年11月11日</time>
+                </td>
+                <td className="category">
+                  <img src="./images/news-tag.png" alt="" />
+                  新着情報
+                </td>
+                <td className="category">
+                  <img src="./images/news-tag.png" alt="" />
+                  キャンペーン情報
+                </td>
+              </tr>
+              <tr className="bg-blue">
+                <td className="content">
+                  テキストが入ります。テキストが入ります。テキストが入ります。
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <time dateTime="2022-11-11">2022年11月11日</time>
+                </td>
+                <td className="category">
+                  <img src="./images/news-tag.png" alt="" />
+                  新着情報
+                </td>
+                <td className="category">
+                  <img src="./images/news-tag.png" alt="" />
+                  キャンペーン情報
+                </td>
+              </tr>
+              <tr>
+                <td className="content">
+                  テキストが入ります。テキストが入ります。テキストが入ります。
+                </td>
+              </tr>
+              <tr className="bg-blue">
+                <td>
+                  <time dateTime="2022-11-11">2022年11月11日</time>
+                </td>
+                <td className="category">
+                  <img src="./images/news-tag.png" alt="" />
+                  新着情報
+                </td>
+                <td className="category">
+                  <img src="./images/news-tag.png" alt="" />
+                  キャンペーン情報
+                </td>
+              </tr>
+              <tr className="bg-blue">
+                <td className="content">
+                  テキストが入ります。テキストが入ります。テキストが入ります。
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <time dateTime="2022-11-11">2022年11月11日</time>
+                </td>
+                <td className="category">
+                  <img src="./images/news-tag.png" alt="" />
+                  新着情報
+                </td>
+                <td className="category">
+                  <img src="./images/news-tag.png" alt="" />
+                  キャンペーン情報
+                </td>
+              </tr>
+              <tr>
+                <td className="content">
+                  テキストが入ります。テキストが入ります。テキストが入ります。
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div className="btn-container">
+            <Button variant="contained">詳しくはコチラ</Button>
+          </div>
+        </div>
 
         <div className="right-column">
           <img src="./images/news-banner.jpg" alt="" />
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const Topics = () => {
+  return (
+    <section id="topics">
+      <h1>トピックス</h1>
+
+      <div className="img-container">
+        <div className="img">
+          <img src="./images/topics01.jpg" alt="" />
+        </div>
+        <div className="img">
+          <img src="./images/topics02.jpg" alt="" />
+        </div>
+        <div className="img">
+          <img src="./images/topics03.jpg" alt="" />
         </div>
       </div>
     </section>
