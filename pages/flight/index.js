@@ -33,7 +33,6 @@ const MainVisual = () => {
 const FlightInfomation = () => {
   const [goal, setGoal] = useState("");
   const [airline, setAirline] = useState("");
-
   const selectGoalMenuHandleChange = (event) => {
     setGoal(event.target.value);
   };
@@ -41,84 +40,244 @@ const FlightInfomation = () => {
     setAirline(event.target.value);
   };
 
-  console.log(goal);
-
-  let testDom;
-
+  let sortData;
+  //下記Switch文は最小化して下さい。
   switch (goal) {
     case "東京":
-      console.log("東京が選択されました");
-      testDom = flight_data.flight.map((v, i) => {
+      sortData = flight_data.flight.map((v, i) => {
         if (v.goal === "東京") {
-          return (
-            <tr key={i}>
-              <td>{v.time}</td>
-              <td>
-                {v.goal}・{v.airline}
-              </td>
-            </tr>
-          );
+          switch (airline) {
+            case "ANA":
+              if (v.airline === "ANA") {
+                return (
+                  <tr key={i}>
+                    <td>{v.time}</td>
+                    <td>
+                      {v.goal}・{v.airline}
+                    </td>
+                    <td>{v.status}</td>
+                  </tr>
+                );
+              }
+              break;
+
+            case "JAL":
+              if (v.airline === "JAL") {
+                return (
+                  <tr key={i}>
+                    <td>{v.time}</td>
+                    <td>
+                      {v.goal}・{v.airline}
+                    </td>
+                    <td>{v.status}</td>
+                  </tr>
+                );
+              }
+              break;
+
+            case "SKY":
+              if (v.airline === "SKY") {
+                return (
+                  <tr key={i}>
+                    <td>{v.time}</td>
+                    <td>
+                      {v.goal}・{v.airline}
+                    </td>
+                    <td>{v.status}</td>
+                  </tr>
+                );
+              }
+              break;
+
+            default:
+              return (
+                <tr key={i}>
+                  <td>{v.time}</td>
+                  <td>
+                    {v.goal}・{v.airline}
+                  </td>
+                  <td>{v.status}</td>
+                </tr>
+              );
+          }
         }
       });
       break;
 
     case "大阪":
-      console.log("大阪が選択されました");
-      testDom = flight_data.flight.map((v, i) => {
+      sortData = flight_data.flight.map((v, i) => {
         if (v.goal === "大阪") {
-          return (
-            <tr key={i}>
-              <td>{v.time}</td>
-              <td>
-                {v.goal}・{v.airline}
-              </td>
-            </tr>
-          );
+          switch (airline) {
+            case "ANA":
+              if (v.airline === "ANA") {
+                return (
+                  <tr key={i}>
+                    <td>{v.time}</td>
+                    <td>
+                      {v.goal}・{v.airline}
+                    </td>
+                    <td>{v.status}</td>
+                  </tr>
+                );
+              }
+              break;
+            case "JAL":
+              if (v.airline === "JAL") {
+                return (
+                  <tr key={i}>
+                    <td>{v.time}</td>
+                    <td>
+                      {v.goal}・{v.airline}
+                    </td>
+                    <td>{v.status}</td>
+                  </tr>
+                );
+              }
+              break;
+            case "SKY":
+              if (v.airline === "SKY") {
+                return (
+                  <tr key={i}>
+                    <td>{v.time}</td>
+                    <td>
+                      {v.goal}・{v.airline}
+                    </td>
+                    <td>{v.status}</td>
+                  </tr>
+                );
+              }
+              break;
+
+            default:
+              return (
+                <tr key={i}>
+                  <td>{v.time}</td>
+                  <td>
+                    {v.goal}・{v.airline}
+                  </td>
+                  <td>{v.status}</td>
+                </tr>
+              );
+          }
         }
       });
       break;
 
     case "北海道":
-      console.log("北海道が選択されました");
-      testDom = flight_data.flight.map((v, i) => {
+      sortData = flight_data.flight.map((v, i) => {
         if (v.goal === "北海道") {
-          return (
-            <tr key={i}>
-              <td>{v.time}</td>
-              <td>
-                {v.goal}・{v.airline}
-              </td>
-            </tr>
-          );
+          switch (airline) {
+            case "ANA":
+              if (v.airline === "ANA") {
+                return (
+                  <tr key={i}>
+                    <td>{v.time}</td>
+                    <td>
+                      {v.goal}・{v.airline}
+                    </td>
+                    <td>{v.status}</td>
+                  </tr>
+                );
+              }
+              break;
+            case "JAL":
+              if (v.airline === "JAL") {
+                return (
+                  <tr key={i}>
+                    <td>{v.time}</td>
+                    <td>
+                      {v.goal}・{v.airline}
+                    </td>
+                    <td>{v.status}</td>
+                  </tr>
+                );
+              }
+              break;
+            case "SKY":
+              if (v.airline === "SKY") {
+                return (
+                  <tr key={i}>
+                    <td>{v.time}</td>
+                    <td>
+                      {v.goal}・{v.airline}
+                    </td>
+                    <td>{v.status}</td>
+                  </tr>
+                );
+              }
+              break;
+
+            default:
+              return (
+                <tr key={i}>
+                  <td>{v.time}</td>
+                  <td>
+                    {v.goal}・{v.airline}
+                  </td>
+                  <td>{v.status}</td>
+                </tr>
+              );
+          }
         }
       });
       break;
 
     default:
-      testDom = flight_data.flight.map((v, i) => {
-        return (
-          <tr key={i}>
-            <td>{v.time}</td>
-            <td>
-              {v.goal}・{v.airline}
-            </td>
-          </tr>
-        );
+      sortData = flight_data.flight.map((v, i) => {
+        switch (airline) {
+          case "ANA":
+            if (v.airline === "ANA") {
+              return (
+                <tr key={i}>
+                  <td>{v.time}</td>
+                  <td>
+                    {v.goal}・{v.airline}
+                  </td>
+                  <td>{v.status}</td>
+                </tr>
+              );
+            }
+            break;
+          case "JAL":
+            if (v.airline === "JAL") {
+              return (
+                <tr key={i}>
+                  <td>{v.time}</td>
+                  <td>
+                    {v.goal}・{v.airline}
+                  </td>
+                  <td>{v.status}</td>
+                </tr>
+              );
+            }
+            break;
+          case "SKY":
+            if (v.airline === "SKY") {
+              return (
+                <tr key={i}>
+                  <td>{v.time}</td>
+                  <td>
+                    {v.goal}・{v.airline}
+                  </td>
+                  <td>{v.status}</td>
+                </tr>
+              );
+            }
+            break;
+
+          default:
+            return (
+              <tr key={i}>
+                <td>{v.time}</td>
+                <td>
+                  {v.goal}・{v.airline}
+                </td>
+                <td>{v.status}</td>
+              </tr>
+            );
+        }
       });
-    // console.log("その他です");
   }
-
-  // console.log(goal);
-  // console.log(airline);
-  // console.log(flight_data.flight);
-  // const task = flight_data.flight.map((v, i) => {
-  //   console.log(v);
-  //   return v;
-  // });
-
-  // flight_data.flight.forEach((v) => {
-  //   console.log(v);
-  // });
 
   return (
     <section id="flight-infomation">
@@ -131,7 +290,11 @@ const FlightInfomation = () => {
           <div className="target">
             <FormControl
               variant="filled"
-              sx={{ m: 1, minWidth: 120, background: "white" }}
+              sx={{
+                m: 1,
+                minWidth: 120,
+                background: "white",
+              }}
             >
               <InputLabel id="demo-simple-select-filled-label">
                 目的地
@@ -143,7 +306,7 @@ const FlightInfomation = () => {
                 onChange={selectGoalMenuHandleChange}
               >
                 <MenuItem value="">
-                  <em>None</em>
+                  <em>ALL</em>
                 </MenuItem>
                 <MenuItem value={"北海道"}>北海道</MenuItem>
                 <MenuItem value={"東京"}>東京</MenuItem>
@@ -167,19 +330,13 @@ const FlightInfomation = () => {
                 onChange={selectAirlineMenuHandleChange}
               >
                 <MenuItem value="">
-                  <em>None</em>
+                  <em>ALL</em>
                 </MenuItem>
                 <MenuItem value={"JAL"}>JAL</MenuItem>
                 <MenuItem value={"ANA"}>ANA</MenuItem>
                 <MenuItem value={"SKY"}>SKY</MenuItem>
               </Select>
             </FormControl>
-          </div>
-
-          <div className="submit-button">
-            <Button variant="contained" sx={{ padding: "1rem 2rem" }}>
-              検索
-            </Button>
           </div>
         </div>
       </div>
@@ -194,19 +351,7 @@ const FlightInfomation = () => {
             </tr>
           </thead>
 
-          <tbody>
-            {/* {flight_data.flight.map((v, i) => {
-              return (
-                <tr key={i}>
-                  <td>{v.time}</td>
-                  <td>
-                    {v.goal}・{v.airline}
-                  </td>
-                </tr>
-              );
-            })} */}
-            {testDom}
-          </tbody>
+          <tbody>{sortData}</tbody>
         </table>
       </div>
     </section>

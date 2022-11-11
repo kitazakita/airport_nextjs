@@ -713,6 +713,7 @@ section#flight-main-visual {
 }
 
 section#flight-infomation {
+  margin: 0 auto;
   margin-top: 5rem;
   max-width: 1400px;
   h1 {
@@ -740,17 +741,30 @@ section#flight-infomation {
   }
 
   .result-container {
-    background-color: $grey;
     width: 90%;
     margin: 0 auto;
+    margin-top: 2rem;
 
     table {
+      width: 100%;
+      border-collapse: collapse;
+
       thead {
         color: $white;
         background-color: $blue;
+
         tr {
           td {
             padding: 1rem 2rem;
+          }
+        }
+      }
+      tbody {
+        width: 100%;
+        background-color: $grey;
+        tr {
+          td {
+            padding-left: 2rem;
           }
         }
       }
