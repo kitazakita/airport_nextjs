@@ -37,6 +37,7 @@ const Header = (props) => {
     justifyContent: "center",
     alignItems: "center",
     fontSize: ".7rem",
+    zIndex: "10",
   };
 
   useEffect(() => {

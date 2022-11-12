@@ -7,6 +7,8 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import Button from "@mui/material/Button";
 import flight_data from "../../components/flight_data.json";
+import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 export default function index() {
   return (
@@ -31,8 +33,10 @@ const MainVisual = () => {
 };
 
 const FlightInfomation = () => {
+  // ソート機能用セレクトメニューの値保持用
   const [goal, setGoal] = useState("");
   const [airline, setAirline] = useState("");
+  // ソート機能用セレクトメニューの値が変更されたときにステートを更新
   const selectGoalMenuHandleChange = (event) => {
     setGoal(event.target.value);
   };
@@ -40,8 +44,10 @@ const FlightInfomation = () => {
     setAirline(event.target.value);
   };
 
+  // 空の変数を用意。
+  // 下記変数にソートして作成したDOMが格納される。
   let sortData;
-  //下記Switch文は最小化して下さい。
+  //下記Switch文は長文のため最小化を推奨。
   switch (goal) {
     case "東京":
       sortData = flight_data.flight.map((v, i) => {
@@ -279,6 +285,12 @@ const FlightInfomation = () => {
       });
   }
 
+  // ソート結果の最大表示を切り替える。button用
+  const [maxVisible, setMaxVisible] = useState(false);
+  const toggleMaxVisible = () => {
+    setMaxVisible((prev) => !prev);
+  };
+
   return (
     <section id="flight-infomation">
       <h1>本日のフライト情報</h1>
@@ -345,14 +357,31 @@ const FlightInfomation = () => {
         <table>
           <thead>
             <tr>
-              <td>出発時刻</td>
-              <td>目的地・航空会社</td>
-              <td>状況</td>
+              <th>出発時刻</th>
+              <th>目的地・航空会社</th>
+              <th>状況</th>
             </tr>
           </thead>
 
-          <tbody>{sortData}</tbody>
+          {maxVisible ? (
+            <tbody className="maxvisible">{sortData}</tbody>
+          ) : (
+            <tbody className="maxvisible-7">{sortData}</tbody>
+          )}
         </table>
+        <button onClick={toggleMaxVisible} className="max-visible-button">
+          {maxVisible ? (
+            <>
+              <KeyboardArrowUpIcon />
+              表示を少なくする
+            </>
+          ) : (
+            <>
+              <KeyboardArrowDownIcon />
+              全て表示
+            </>
+          )}
+        </button>
       </div>
     </section>
   );
