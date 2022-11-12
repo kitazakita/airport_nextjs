@@ -11,9 +11,6 @@ img {
 }
 a {
   text-decoration: none;
-  &:visited {
-    color: $black;
-  }
 }
 
 header {
@@ -703,6 +700,7 @@ section#flight-main-visual {
 
   .text-content {
     padding: 5% 0 0 8%;
+    color: $dark;
     h1 {
       font-size: clamp(1.25rem, 0.614rem + 3.18vw, 3rem);
     }
@@ -825,6 +823,299 @@ section#flight-infomation {
       display: flex;
       justify-content: center;
       align-items: center;
+    }
+  }
+}
+
+section#japan-airline {
+  margin-top: 8rem;
+  overflow: hidden;
+  .title {
+    text-align: center;
+    h1 {
+      display: inline-block;
+      position: relative;
+      padding: 0.4rem 0;
+      font-size: 2.2rem;
+      &:before {
+        content: "";
+        width: 100%;
+        height: 3px;
+        background-color: $blue;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      &:after {
+        content: "";
+        width: 100%;
+        height: 3.5px;
+        background-color: $blue;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+    }
+  }
+
+  .japan-airline-flow {
+    margin: 0 auto;
+    margin-top: 5rem;
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    @include md {
+      flex-direction: column;
+      gap: 5rem;
+    }
+
+    ol.figure {
+      width: 200px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      margin: 0 auto;
+      &::after {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        width: 2rem;
+        height: 1400px;
+        background-color: $grey;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 0;
+        @include lg {
+          height: 1300px;
+        }
+        @include xl {
+          height: 1400px;
+        }
+        @include md {
+          height: 280px;
+        }
+      }
+      li {
+        width: 200px;
+        background-color: lightskyblue;
+        display: inline-block;
+        padding: 1rem;
+        position: relative;
+        color: $white;
+        text-align: center;
+        &::after {
+          content: "";
+          position: absolute;
+          top: 100%;
+          left: 0;
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 20px 100px 0 100px;
+          border-color: lightskyblue transparent transparent transparent;
+        }
+        &:nth-child(2) {
+          background-color: dodgerblue;
+          margin-top: 27rem;
+          @include xl {
+            margin-top: 25rem;
+          }
+          @include md {
+            margin-top: 3rem;
+          }
+          &::after {
+            border-color: dodgerblue transparent transparent transparent;
+          }
+        }
+        &:nth-child(3) {
+          background-color: royalblue;
+          margin-top: 27rem;
+          @include xl {
+            margin-top: 25rem;
+          }
+          @include md {
+            margin-top: 3rem;
+          }
+          &::after {
+            border-color: royalblue transparent transparent transparent;
+          }
+        }
+      }
+    }
+
+    dl.description {
+      width: 70%;
+      margin: 0 auto;
+      dt {
+        color: $blue;
+        font-weight: bold;
+        font-size: 2rem;
+      }
+      dd {
+        margin-bottom: 10rem;
+        &:last-child {
+          margin-bottom: 3rem;
+        }
+        h3 {
+          font-weight: normal;
+          margin-top: 1rem;
+        }
+        figure.inner {
+          margin-top: 4rem;
+          display: flex;
+          align-items: center;
+          @include md {
+            flex-direction: column;
+            gap: 2rem;
+          }
+          img {
+            width: 30%;
+            @include md {
+              width: 70%;
+            }
+          }
+          figcaption {
+            width: 60%;
+            padding: 0 5%;
+            @include md {
+              width: 70%;
+              padding: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+  .shape {
+    width: 100%;
+    height: 100px;
+    background-color: $grey;
+    @include md {
+      display: none;
+    }
+  }
+}
+
+section#carry-on-bag {
+  margin-top: 10rem;
+  .title {
+    text-align: center;
+    h1 {
+      display: inline-block;
+      position: relative;
+      padding: 0.4rem 0;
+      font-size: 2.2rem;
+      &:before {
+        content: "";
+        width: 100%;
+        height: 3px;
+        background-color: $blue;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      &:after {
+        content: "";
+        width: 100%;
+        height: 3.5px;
+        background-color: $blue;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+    }
+  }
+
+  .inner-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    figure {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 4rem;
+      @include sm {
+        flex-direction: column;
+      }
+      figcaption {
+        width: 50%;
+        padding: 0 5%;
+        @include sm {
+          order: 2;
+          width: 70%;
+        }
+      }
+      img {
+        width: 10%;
+        @include xl {
+          width: 15%;
+        }
+        @include lg {
+          width: 20%;
+        }
+        @include sm {
+          order: 1;
+          width: 40%;
+        }
+      }
+    }
+  }
+}
+
+section#airline-all {
+  margin-top: 15rem;
+  .title {
+    text-align: center;
+    h1 {
+      display: inline-block;
+      position: relative;
+      padding: 0.4rem 0;
+      font-size: 2.2rem;
+      &:before {
+        content: "";
+        width: 100%;
+        height: 3px;
+        background-color: $blue;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      &:after {
+        content: "";
+        width: 100%;
+        height: 3.5px;
+        background-color: $blue;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+    }
+  }
+
+  table {
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 5rem;
+    max-width: 1200px;
+    border-collapse: collapse;
+
+    @include md {
+      width: 90%;
+    }
+
+    td {
+      border-bottom: 1px solid black;
+      padding: 1rem 3rem;
+      @include lg {
+        padding: 1rem 2rem;
+      }
+      @include md {
+        font-size: 0.8rem;
+      }
+      @include sm {
+        font-size: 0.7rem;
+        padding: 1rem 0;
+      }
     }
   }
 }
