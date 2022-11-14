@@ -10,6 +10,7 @@ import ElderlyWomanIcon from "@mui/icons-material/ElderlyWoman";
 import QuizIcon from "@mui/icons-material/Quiz";
 import FlightIcon from "@mui/icons-material/Flight";
 import Link from "next/link";
+import GetTenkiAPI from "./GetTenkiAPI";
 
 const Header = (props) => {
   const [menuToggle, setMenuToggle] = useState(false);
@@ -66,6 +67,8 @@ const Header = (props) => {
           TOP
         </Button>
       </Scroll>
+
+      <GetTenkiAPI />
 
       <header id="top">
         <div className="spacer"></div>

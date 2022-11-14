@@ -210,6 +210,50 @@ footer {
   }
 }
 
+section#tenki {
+  position: fixed;
+  z-index: 10;
+  top: auto;
+  right: auto;
+  bottom: 0;
+  left: 0;
+  color: $red;
+  background-color: $grey;
+  transform: translateY(88%);
+  transition: transform 1s;
+
+  &.active {
+    transform: translateY(0);
+    transition: transform 1s;
+  }
+
+  .flex-container {
+    display: flex;
+    button {
+      border: none;
+    }
+    h1 {
+      font-size: 2rem;
+    }
+  }
+  ul#tenki-menu {
+    // display: flex;
+    list-style: none;
+    gap: 2rem;
+
+    ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+
+      span {
+        display: block;
+      }
+    }
+  }
+}
+
 /*-----
 ---トップページ-----
 ----*/
