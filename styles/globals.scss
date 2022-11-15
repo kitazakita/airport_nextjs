@@ -205,50 +205,98 @@ footer {
   .copy-right {
     text-align: center;
     padding: 2rem 0;
-    small {
-    }
   }
 }
 
 section#tenki {
-  position: fixed;
-  z-index: 10;
-  top: auto;
-  right: auto;
-  bottom: 0;
-  left: 0;
-  color: $red;
-  background-color: $grey;
-  transform: translateY(88%);
-  transition: transform 1s;
-
-  &.active {
-    transform: translateY(0);
-    transition: transform 1s;
-  }
-
-  .flex-container {
-    display: flex;
-    button {
-      border: none;
-    }
+  margin: 0 auto;
+  margin-top: 5rem;
+  width: 90%;
+  max-width: 1400px;
+  .title {
+    text-align: center;
     h1 {
-      font-size: 2rem;
+      display: inline-block;
+      position: relative;
+      padding: 0.4rem 0;
+      font-size: 2.2rem;
+      &:before {
+        content: "";
+        width: 100%;
+        height: 3px;
+        background-color: $blue;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      &:after {
+        content: "";
+        width: 100%;
+        height: 3px;
+        background-color: $blue;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+    }
+    p {
+      text-align: center;
+      margin-top: 2rem;
     }
   }
+
+  #japan-map {
+    width: 50%;
+    margin: 0 auto;
+
+    path,
+    rect {
+      fill: green;
+      position: relative;
+    }
+    path {
+      cursor: pointer;
+      font-size: 1rem;
+      &:hover {
+        fill: lightgreen;
+      }
+    }
+    tspan {
+      font-size: 3rem;
+      pointer-events: none;
+    }
+  }
+
   ul#tenki-menu {
-    // display: flex;
     list-style: none;
-    gap: 2rem;
+    font-size: 0.8rem;
+    h3 {
+      text-align: center;
+      &.loader-animation {
+        animation: loaderDots 3s ease infinite;
 
-    ul {
-      list-style: none;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
+        @keyframes loaderDots {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
+      }
+    }
+    li {
+      margin-bottom: 1rem;
+      ul {
+        list-style: none;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 2rem;
 
-      span {
-        display: block;
+        span {
+          display: block;
+        }
       }
     }
   }
@@ -893,7 +941,7 @@ section#japan-airline {
       &:after {
         content: "";
         width: 100%;
-        height: 3.5px;
+        height: 3px;
         background-color: $blue;
         position: absolute;
         bottom: 0;
@@ -1061,7 +1109,7 @@ section#carry-on-bag {
       &:after {
         content: "";
         width: 100%;
-        height: 3.5px;
+        height: 3px;
         background-color: $blue;
         position: absolute;
         bottom: 0;
@@ -1127,7 +1175,7 @@ section#airline-all {
       &:after {
         content: "";
         width: 100%;
-        height: 3.5px;
+        height: 3 px;
         background-color: $blue;
         position: absolute;
         bottom: 0;

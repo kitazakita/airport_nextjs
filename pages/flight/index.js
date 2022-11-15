@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Header from "../../components/Header";
+import GetTenkiAPI from "../../components/GetTenkiAPI";
 import Footer from "../../components/Footer";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
@@ -15,6 +16,7 @@ export default function index() {
       <Header title="九州国際空港-フライト" />
       <MainVisual />
       <FlightInfomation />
+      <GetTenkiAPI />
       <JapanAirline />
       <CarryOnBag />
       <AirlineAll />
