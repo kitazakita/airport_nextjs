@@ -302,6 +302,19 @@ section#tenki {
   }
 }
 
+.fullsize-loader {
+  position: fixed;
+  z-index: 10000;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: grey;
+  &.d-none {
+    display: none;
+  }
+}
+
 /*-----
 ---トップページ-----
 ----*/
@@ -922,33 +935,7 @@ section#flight-infomation {
 section#japan-airline {
   margin-top: 8rem;
   overflow: hidden;
-  .title {
-    text-align: center;
-    h1 {
-      display: inline-block;
-      position: relative;
-      padding: 0.4rem 0;
-      font-size: 2.2rem;
-      &:before {
-        content: "";
-        width: 100%;
-        height: 3px;
-        background-color: $blue;
-        position: absolute;
-        top: 0;
-        left: 0;
-      }
-      &:after {
-        content: "";
-        width: 100%;
-        height: 3px;
-        background-color: $blue;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-      }
-    }
-  }
+  @include title-line;
 
   .japan-airline-flow {
     margin: 0 auto;
@@ -1090,33 +1077,7 @@ section#japan-airline {
 
 section#carry-on-bag {
   margin-top: 10rem;
-  .title {
-    text-align: center;
-    h1 {
-      display: inline-block;
-      position: relative;
-      padding: 0.4rem 0;
-      font-size: 2.2rem;
-      &:before {
-        content: "";
-        width: 100%;
-        height: 3px;
-        background-color: $blue;
-        position: absolute;
-        top: 0;
-        left: 0;
-      }
-      &:after {
-        content: "";
-        width: 100%;
-        height: 3px;
-        background-color: $blue;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-      }
-    }
-  }
+  @include title-line;
 
   .inner-container {
     max-width: 1400px;
@@ -1156,33 +1117,7 @@ section#carry-on-bag {
 
 section#airline-all {
   margin-top: 15rem;
-  .title {
-    text-align: center;
-    h1 {
-      display: inline-block;
-      position: relative;
-      padding: 0.4rem 0;
-      font-size: 2.2rem;
-      &:before {
-        content: "";
-        width: 100%;
-        height: 3px;
-        background-color: $blue;
-        position: absolute;
-        top: 0;
-        left: 0;
-      }
-      &:after {
-        content: "";
-        width: 100%;
-        height: 3 px;
-        background-color: $blue;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-      }
-    }
-  }
+  @include title-line;
 
   table {
     width: 70%;
@@ -1207,6 +1142,89 @@ section#airline-all {
       @include sm {
         font-size: 0.7rem;
         padding: 1rem 0;
+      }
+    }
+  }
+}
+
+/*-----
+---空港で過ごすページ-----
+----*/
+section#stay-main-visual {
+  height: 350px;
+  background-image: url(../public/images/flight-main-visual.jpg);
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: cover;
+
+  .text-content {
+    padding: 5% 0 0 8%;
+    color: $dark;
+    h1 {
+      font-size: clamp(1.25rem, 0.614rem + 3.18vw, 3rem);
+    }
+    h4 {
+      font-size: clamp(1.25rem, 1.023rem + 1.14vw, 1.875rem);
+    }
+  }
+}
+
+section#infomation-map {
+  @include title-line;
+  .map-img {
+    text-align: center;
+  }
+}
+
+section.stay-container {
+  @include title-line;
+
+  .card-container {
+    ul {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      list-style: none;
+      width: 80%;
+      max-width: 1000px;
+      margin: 0 auto;
+      @include md {
+        width: 100%;
+      }
+      @include sm {
+        width: 80%;
+      }
+
+      li.card {
+        width: 40%;
+        max-width: 400px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 10px;
+        box-shadow: 0px 0px 20px 0px #adadad;
+        overflow: hidden;
+        margin-top: 2rem;
+        @include sm {
+          width: 80%;
+        }
+
+        p.place {
+          margin: 1rem 0;
+          font-size: 0.8rem;
+        }
+        h4.service-name {
+          font-size: 1.3rem;
+          margin-top: 0.2rem;
+          margin-bottom: 2rem;
+        }
+        h6.category {
+          width: 100%;
+          padding: 0.8rem 0;
+          text-align: center;
+          color: $white;
+          background-color: $blue;
+        }
       }
     }
   }

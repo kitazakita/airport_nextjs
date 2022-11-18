@@ -1,0 +1,80 @@
+{
+  "service": [
+    {
+      "img": "./images/service01.jpg",
+      "place": "国内ターミナル出入口",
+      "name": "〇〇レンタカー",
+      "category": "レンタカー"
+    },
+    {
+      "img": "./images/service02.jpg",
+      "place": "国内ターミナル1F 保安検査通過前",
+      "name": "Japan ラウンジ",
+      "category": "航空会社ラウンジ"
+    },
+    {
+      "img": "./images/service03.jpg",
+      "place": "国内ターミナル/国際ターミナル",
+      "name": "コインロッカー",
+      "category": "コインロッカー"
+    },
+    {
+      "img": "./images/service04.jpg",
+      "place": "国際ターミナル",
+      "name": "国際電話",
+      "category": "国際電話"
+    },
+    {
+      "img": "./images/service05.jpg",
+      "place": "国内ターミナル出口",
+      "name": "路線バス発券機",
+      "category": "バス発券機　"
+    },
+    {
+      "img": "./images/service06.jpg",
+      "place": "駐車場",
+      "name": "ガソリンスタンド",
+      "category": "ガソリンスタンド"
+    }
+  ],
+  "food": [
+    {
+      "img": "./images/food01.jpg",
+      "place": "国内ターミナル フードコート",
+      "name": "〇〇うどん",
+      "category": "飲食店"
+    },
+    {
+      "img": "./images/food02.jpg",
+      "place": "国内ターミナル フードコート",
+      "name": "ラーメン〇〇",
+      "category": "飲食店"
+    },
+    {
+      "img": "./images/food03.jpg",
+      "place": "国内ターミナル フードコート",
+      "name": "とんかつ〇〇",
+      "category": "飲食店"
+    },
+    {
+      "img": "./images/food04.jpg",
+      "place": "国内ターミナル フードコート",
+      "name": "〇寿司",
+      "category": "飲食店"
+    }
+  ],
+  "shop": [
+    {
+      "img": "./images/coming-soon.png",
+      "place": "国内ターミナル ショップタウン",
+      "name": "準備中",
+      "category": "ショップ"
+    },
+    {
+      "img": "./images/coming-soon.png",
+      "place": "国内ターミナル ショップタウン",
+      "name": "準備中",
+      "category": "ショップ"
+    }
+  ]
+}

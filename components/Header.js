@@ -10,6 +10,7 @@ import ElderlyWomanIcon from "@mui/icons-material/ElderlyWoman";
 import QuizIcon from "@mui/icons-material/Quiz";
 import FlightIcon from "@mui/icons-material/Flight";
 import Link from "next/link";
+import Loader from "./Loader";
 
 const Header = (props) => {
   const [menuToggle, setMenuToggle] = useState(false);
@@ -40,9 +41,13 @@ const Header = (props) => {
     zIndex: "10",
   };
 
+  const [loader, setLoader] = useState(false);
+  console.log("レンダリング開始");
+
   useEffect(() => {
+    console.log("レンダリング完了");
     window.addEventListener("scroll", pageUpToggleVisibility);
-    window.addEventListener("resize", () => {});
+    setLoader((prev) => !prev);
   }, []);
 
   return (
@@ -66,6 +71,12 @@ const Header = (props) => {
           TOP
         </Button>
       </Scroll>
+
+      {loader ? (
+        <div className="fullsize-loader d-none">ロード中です</div>
+      ) : (
+        <div className="fullsize-loader">ロード中です</div>
+      )}
 
       <header id="top">
         <div className="spacer"></div>
