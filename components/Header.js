@@ -1,15 +1,15 @@
-import { useState } from "react";
-import { useEffect } from "react";
-import { Link as Scroll } from "react-scroll";
-import Head from "next/head";
-import { AppBar, Button, List, ListItem, ListItemButton } from "@mui/material";
-import Grid from "@mui/material/Unstable_Grid2";
-import { Box } from "@mui/system";
-import ContactSupportIcon from "@mui/icons-material/ContactSupport";
-import ElderlyWomanIcon from "@mui/icons-material/ElderlyWoman";
-import QuizIcon from "@mui/icons-material/Quiz";
-import FlightIcon from "@mui/icons-material/Flight";
-import Link from "next/link";
+import { useState } from 'react';
+import { useEffect } from 'react';
+import { Link as Scroll } from 'react-scroll';
+import Head from 'next/head';
+import { AppBar, Button, List, ListItem, ListItemButton } from '@mui/material';
+import Grid from '@mui/material/Unstable_Grid2';
+import { Box } from '@mui/system';
+import ContactSupportIcon from '@mui/icons-material/ContactSupport';
+import ElderlyWomanIcon from '@mui/icons-material/ElderlyWoman';
+import QuizIcon from '@mui/icons-material/Quiz';
+import FlightIcon from '@mui/icons-material/Flight';
+import Link from 'next/link';
 
 const Header = (props) => {
   const [menuToggle, setMenuToggle] = useState(false);
@@ -24,24 +24,24 @@ const Header = (props) => {
     window.scrollY > 500 ? setIsVisible(true) : setIsVisible(false);
   };
   const pageTopButtonStyle = {
-    position: "fixed",
-    bottom: "10px",
-    right: "10px",
-    minWidth: "50px",
-    minHeight: "50px",
-    maxWidth: "50px",
-    maxHeight: "50px",
-    borderRadius: "50%",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-    fontSize: ".7rem",
-    zIndex: "10",
+    position: 'fixed',
+    bottom: '10px',
+    right: '10px',
+    minWidth: '50px',
+    minHeight: '50px',
+    maxWidth: '50px',
+    maxHeight: '50px',
+    borderRadius: '50%',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    fontSize: '.7rem',
+    zIndex: '10',
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", pageUpToggleVisibility);
+    window.addEventListener('scroll', pageUpToggleVisibility);
   }, []);
 
   return (
@@ -50,48 +50,48 @@ const Header = (props) => {
         <title>{props.title}</title>
       </Head>
       <Scroll
-        to="top"
-        className={isVisible ? "pageUp" : "pageUp d-none"}
+        to='top'
+        className={isVisible ? 'pageUp' : 'pageUp d-none'}
         smooth={true}
       >
-        <Button variant="contained" sx={pageTopButtonStyle}>
+        <Button variant='contained' sx={pageTopButtonStyle}>
           <FlightIcon
             sx={{
-              color: "white",
-              width: "150%",
-              height: "150%",
+              color: 'white',
+              width: '150%',
+              height: '150%',
             }}
           />
           TOP
         </Button>
       </Scroll>
 
-      <header id="top">
-        <div className="spacer"></div>
-        <AppBar sx={{ height: "70px" }}>
-          <div className="inner-wrapper">
-            <Link href="./">
-              <div className="header-logo">
-                <img src="./images/logo_white.png" alt="" />
+      <header id='top'>
+        <div className='spacer'></div>
+        <AppBar sx={{ height: '70px' }}>
+          <div className='inner-wrapper'>
+            <Link href='./'>
+              <div className='header-logo'>
+                <img src='./images/logo_white.png' alt='' />
               </div>
             </Link>
 
-            <div className="sub-menu">
+            <div className='sub-menu'>
               <ul>
                 <li>
-                  <Link href="./info">
+                  <Link href='./info#info-contact'>
                     <ContactSupportIcon />
                     お問い合わせ
                   </Link>
                 </li>
                 <li>
-                  <Link href="./info">
+                  <Link href='./info#question-answer'>
                     <QuizIcon />
                     よくある質問
                   </Link>
                 </li>
                 <li>
-                  <Link href="./info">
+                  <Link href='./info#help'>
                     <ElderlyWomanIcon />
                     お手伝いが必要な方
                   </Link>
@@ -99,7 +99,7 @@ const Header = (props) => {
               </ul>
             </div>
             <Button
-              sx={{ display: { xs: "block", md: "none" } }}
+              sx={{ display: { xs: 'block', md: 'none' } }}
               onClick={clickHandler}
             >
               {/* <MenuIcon
@@ -109,8 +109,8 @@ const Header = (props) => {
               <div
                 className={
                   menuToggle
-                    ? "hamburger-menu-btn active"
-                    : "hamburger-menu-btn"
+                    ? 'hamburger-menu-btn active'
+                    : 'hamburger-menu-btn'
                 }
               >
                 <span></span>
@@ -121,29 +121,29 @@ const Header = (props) => {
           </div>
         </AppBar>
 
-        <nav className="main-menu">
+        <nav className='main-menu'>
           <Grid
             container
             sx={{
-              padding: "0 5%",
-              alignItems: "flex-end",
+              padding: '0 5%',
+              alignItems: 'flex-end',
             }}
           >
             <Grid
               container
               md={6}
               sx={{
-                padding: "2% 0",
-                textAlign: "center",
-                display: { xs: "none", md: "flex" },
+                padding: '2% 0',
+                textAlign: 'center',
+                display: { xs: 'none', md: 'flex' },
               }}
             >
               {/* 左側のメニュー */}
               <Grid md={6}>
-                <Link href="./flight">
+                <Link href='./flight'>
                   <Box>
                     <Box>
-                      <img src="./images/headerMenuJapan.png" alt="" />
+                      <img src='./images/headerMenuJapan.png' alt='' />
                     </Box>
                     <Box>
                       <p>国内線フライト情報</p>
@@ -152,10 +152,10 @@ const Header = (props) => {
                 </Link>
               </Grid>
               <Grid md={6}>
-                <Link href="./flight">
+                <Link href='./flight'>
                   <Box>
                     <Box>
-                      <img src="./images/headerMenuWorld.png" alt="" />
+                      <img src='./images/headerMenuWorld.png' alt='' />
                     </Box>
                     <Box>
                       <p>国際線フライト情報</p>
@@ -168,17 +168,17 @@ const Header = (props) => {
               container
               md={6}
               sx={{
-                padding: "2% 0",
-                textAlign: "center",
-                display: { xs: "none", md: "flex" },
+                padding: '2% 0',
+                textAlign: 'center',
+                display: { xs: 'none', md: 'flex' },
               }}
             >
               {/* 右側のメニュー */}
               <Grid md={4}>
-                <Link href="./stay">
+                <Link href='./stay#stay-food'>
                   <Box>
                     <Box>
-                      <img src="./images/headerMenuFood.png" alt="" />
+                      <img src='./images/headerMenuFood.png' alt='' />
                     </Box>
                     <Box>
                       <p>レストラン</p>
@@ -187,10 +187,10 @@ const Header = (props) => {
                 </Link>
               </Grid>
               <Grid md={4}>
-                <Link href="./stay">
+                <Link href='./stay#stay-shop'>
                   <Box>
                     <Box>
-                      <img src="./images/headerMenuShop.png" alt="" />
+                      <img src='./images/headerMenuShop.png' alt='' />
                     </Box>
                     <Box>
                       <p>ショップ</p>
@@ -199,10 +199,10 @@ const Header = (props) => {
                 </Link>
               </Grid>
               <Grid md={4}>
-                <Link href="./stay">
+                <Link href='./stay#stay-shop'>
                   <Box>
                     <Box>
-                      <img src="./images/headerMenuShop2.png" alt="" />
+                      <img src='./images/headerMenuShop2.png' alt='' />
                     </Box>
                     <Box>
                       <p>免税店</p>
@@ -213,14 +213,14 @@ const Header = (props) => {
             </Grid>
           </Grid>
         </nav>
-        <nav className="mobileNav">
-          <div className={menuToggle ? "mobileMenu toggleMenu" : "mobileMenu"}>
+        <nav className='mobileNav'>
+          <div className={menuToggle ? 'mobileMenu toggleMenu' : 'mobileMenu'}>
             <List>
               <ListItem disablePadding>
                 <ListItemButton>
-                  <Link href="./flight" sx={{ display: "flex" }}>
-                    <div className="mobile-menu-icon">
-                      <img src="./images/headerMenuJapan.png" alt="" />
+                  <Link href='./flight' sx={{ display: 'flex' }}>
+                    <div className='mobile-menu-icon'>
+                      <img src='./images/headerMenuJapan.png' alt='' />
                     </div>
                     <Box>
                       <p>国内線フライト情報</p>
@@ -230,9 +230,9 @@ const Header = (props) => {
               </ListItem>
               <ListItem disablePadding>
                 <ListItemButton>
-                  <Link href="./flight" sx={{ display: "flex" }}>
-                    <div className="mobile-menu-icon">
-                      <img src="./images/headerMenuWorld.png" alt="" />
+                  <Link href='./flight' sx={{ display: 'flex' }}>
+                    <div className='mobile-menu-icon'>
+                      <img src='./images/headerMenuWorld.png' alt='' />
                     </div>
                     <Box>
                       <p>国際線フライト情報</p>
@@ -242,9 +242,9 @@ const Header = (props) => {
               </ListItem>
               <ListItem disablePadding>
                 <ListItemButton>
-                  <Link href="./stay" sx={{ display: "flex" }}>
-                    <div className="mobile-menu-icon">
-                      <img src="./images/headerMenuFood.png" alt="" />
+                  <Link href='./stay#stay-food' sx={{ display: 'flex' }}>
+                    <div className='mobile-menu-icon'>
+                      <img src='./images/headerMenuFood.png' alt='' />
                     </div>
                     <Box>
                       <p>レストラン</p>
@@ -254,9 +254,9 @@ const Header = (props) => {
               </ListItem>
               <ListItem disablePadding>
                 <ListItemButton>
-                  <Link href="./stay" sx={{ display: "flex" }}>
-                    <div className="mobile-menu-icon">
-                      <img src="./images/headerMenuShop.png" alt="" />
+                  <Link href='./stay#stay-shop' sx={{ display: 'flex' }}>
+                    <div className='mobile-menu-icon'>
+                      <img src='./images/headerMenuShop.png' alt='' />
                     </div>
                     <Box>
                       <p>ショップ</p>
@@ -266,9 +266,9 @@ const Header = (props) => {
               </ListItem>
               <ListItem disablePadding>
                 <ListItemButton>
-                  <Link href="./stay" sx={{ display: "flex" }}>
-                    <div className="mobile-menu-icon">
-                      <img src="./images/headerMenuShop2.png" alt="" />
+                  <Link href='./stay#stay-shop' sx={{ display: 'flex' }}>
+                    <div className='mobile-menu-icon'>
+                      <img src='./images/headerMenuShop2.png' alt='' />
                     </div>
                     <Box>
                       <p>免税店</p>
@@ -279,17 +279,17 @@ const Header = (props) => {
 
               <ListItem disablePadding>
                 <ListItemButton>
-                  <Link href="./info">お問い合わせ</Link>
+                  <Link href='./info#info-contact'>お問い合わせ</Link>
                 </ListItemButton>
               </ListItem>
               <ListItem disablePadding>
                 <ListItemButton>
-                  <Link href="./info">よくある質問</Link>
+                  <Link href='./info#question-answer'>よくある質問</Link>
                 </ListItemButton>
               </ListItem>
               <ListItem disablePadding>
                 <ListItemButton>
-                  <Link href="./info">お手伝いが必要な方</Link>
+                  <Link href='./info#help'>お手伝いが必要な方</Link>
                 </ListItemButton>
               </ListItem>
             </List>
