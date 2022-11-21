@@ -44,7 +44,7 @@ const InfomationMap = () => {
 
 const ServiceStay = () => {
   return (
-    <section className='stay-container'>
+    <section className='stay-container' id='stay-service'>
       <div className='title'>
         <h1>施設サービス</h1>
       </div>
