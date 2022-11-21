@@ -248,6 +248,12 @@ section#tenki {
   #japan-map {
     width: 50%;
     margin: 0 auto;
+    @include md {
+      width: 70%;
+    }
+    @include sm {
+      width: 90%;
+    }
 
     path,
     rect {
@@ -299,19 +305,6 @@ section#tenki {
         }
       }
     }
-  }
-}
-
-.fullsize-loader {
-  position: fixed;
-  z-index: 10000;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: grey;
-  &.d-none {
-    display: none;
   }
 }
 
