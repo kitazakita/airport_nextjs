@@ -123,7 +123,7 @@ const QuestionAnswer = () => {
                 onClick={() => handleClick(i)}
               >
                 <p>
-                  {<HelpIcon />} {menu.question}
+                  {<HelpIcon />}&nbsp; {menu.question}
                 </p>
                 <div className='icon'>
                   <span></span>
@@ -132,6 +132,7 @@ const QuestionAnswer = () => {
               </button>
               <div className={click === i ? 'answer' : 'answer d-none'}>
                 {<HdrAutoIcon />}
+                &nbsp;
                 {menu.answer}
               </div>
             </li>

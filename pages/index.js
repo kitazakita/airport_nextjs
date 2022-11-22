@@ -130,18 +130,19 @@ const MainMenu = () => {
             <div className='table'>
               <div className='row'>
                 <div className='cell'>
-                  <a href='#'>バス</a>
+                  <Link href='./access'>アクセス</Link>
                 </div>
+
                 <div className='cell'>
-                  <a href='#'>電車</a>
+                  <Link href='./access#access-train'>電車</Link>
                 </div>
               </div>
               <div className='row'>
                 <div className='cell'>
-                  <a href='#'>駐車場</a>
+                  <Link href='./access#access-bus'>バス</Link>
                 </div>
                 <div className='cell'>
-                  <a href='#'>アクセス</a>
+                  <Link href='./access#access-car'>駐車場</Link>
                 </div>
               </div>
             </div>

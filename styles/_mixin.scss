@@ -7,18 +7,17 @@ $skyBlue: rgb(206, 241, 255);
 $blue2: #2196f3;
 $red: red;
 $yellow: yellow;
+$green: green;
 
 /*---------------------
-  section title
-  
-
+  section title  
 ---------------------*/
-@mixin title() {
+@mixin title($mt: 0, $mr: 0, $mb: 1rem, $ml: 10%) {
   h1 {
     display: inline-block;
     border-bottom: 3px solid $blue;
-    margin-bottom: 1rem;
-    margin-left: 10%;
+    margin-bottom: $mb;
+    margin-left: $ml;
     padding-right: 8rem;
     padding-left: 2rem;
     @include sm {
