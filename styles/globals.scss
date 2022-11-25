@@ -959,7 +959,7 @@ section#japan-airline {
       }
       li {
         width: 200px;
-        background-color: lightskyblue;
+        background-color: #506cbf;
         display: inline-block;
         padding: 1rem;
         position: relative;
@@ -974,10 +974,10 @@ section#japan-airline {
           height: 0;
           border-style: solid;
           border-width: 20px 100px 0 100px;
-          border-color: lightskyblue transparent transparent transparent;
+          border-color: #506cbf transparent transparent transparent;
         }
         &:nth-child(2) {
-          background-color: dodgerblue;
+          background-color: #202d73;
           margin-top: 27rem;
           @include xl {
             margin-top: 25rem;
@@ -986,11 +986,11 @@ section#japan-airline {
             margin-top: 3rem;
           }
           &::after {
-            border-color: dodgerblue transparent transparent transparent;
+            border-color: #202d73 transparent transparent transparent;
           }
         }
         &:nth-child(3) {
-          background-color: royalblue;
+          background-color: #252940;
           margin-top: 27rem;
           @include xl {
             margin-top: 25rem;
@@ -999,7 +999,7 @@ section#japan-airline {
             margin-top: 3rem;
           }
           &::after {
-            border-color: royalblue transparent transparent transparent;
+            border-color: #252940 transparent transparent transparent;
           }
         }
       }
