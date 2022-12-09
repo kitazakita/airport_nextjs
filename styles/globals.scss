@@ -308,6 +308,20 @@ section#tenki {
   }
 }
 
+.page-loader {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10000;
+  background-color: $skyBlue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
 /*-----
 ---トップページ-----
 ----*/
