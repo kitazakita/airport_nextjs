@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { useEffect } from 'react';
 import { Link as Scroll } from 'react-scroll';
 import Head from 'next/head';
 import {
@@ -17,12 +16,6 @@ import ElderlyWomanIcon from '@mui/icons-material/ElderlyWoman';
 import QuizIcon from '@mui/icons-material/Quiz';
 import FlightIcon from '@mui/icons-material/Flight';
 import Link from 'next/link';
-import {
-  InfinitySpin,
-  RotatingLines,
-  RotatingSquare,
-} from 'react-loader-spinner';
-// import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 
 const Header = (props) => {
   const [menuToggle, setMenuToggle] = useState(false);
@@ -53,43 +46,11 @@ const Header = (props) => {
     zIndex: '10',
   };
 
-  const [loaded, setLoaded] = useState(false);
-
-  useEffect(() => {
-    // window.addEventListener('scroll', pageUpToggleVisibility);
-    document.querySelector('body').style.overflowY = 'hidden';
-
-    if (loaded === true) {
-    } else {
-      setLoaded((prev) => true);
-      document.querySelector('body').style.overflowY = 'auto';
-    }
-    document.querySelector('body').style.overflowY = 'auto';
-  }, [loaded]);
-
   return (
     <>
       <Head>
         <title>{props.title}</title>
       </Head>
-
-      {loaded ? (
-        ''
-      ) : (
-        <div className='page-loader'>
-          <RotatingSquare
-            height='100'
-            width='100'
-            color='#202d73'
-            ariaLabel='rotating-square-loading'
-            strokeWidth='4'
-            wrapperStyle={{}}
-            wrapperClass=''
-            visible={true}
-          />
-          <span>Loading...</span>
-        </div>
-      )}
 
       <Alert
         severity='error'
